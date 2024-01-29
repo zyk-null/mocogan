@@ -1,0 +1,100 @@
+python train.py  \
+    --image_batch 64 \
+    --video_batch 64 \
+    --use_infogan \
+    --use_noise \
+    --noise_sigma 0.1 \
+    --image_discriminator PatchImageDiscriminator \
+    --video_discriminator CategoricalVideoDiscriminator \
+    --print_every 100 \
+    --every_nth 2 \
+    --dim_z_content 50 \
+    --dim_z_motion 10 \
+    --dim_z_category 4 \
+    ../data/actions ../logs/actions
+
+
+python train.py  \
+    --image_batch 32 \
+    --video_batch 32 \
+    --use_infogan \
+    --use_noise \
+    --use_categories False \
+    --noise_sigma 0.1 \
+    --image_discriminator PatchImageDiscriminator \
+    --video_discriminator PatchImageDiscriminator \
+    --print_every 100 \
+    --every_nth 2 \
+    --dim_z_content 50 \
+    --dim_z_motion 10 \
+    --dim_z_category 0 \
+    ../data/shapes ../logs/shapes
+
+
+ ../logs/actions/generator_13000.pytorch 
+
+ generate_videos.py
+
+ python generate_videos.py --num_videos 10 --output_format gif --number_of_frames 16 ../logs/actions/generator_12000.pytorch output
+
+
+ {'--batches': '100000',
+'--dim_z_category': '101',
+'--dim_z_content': '50',
+'--dim_z_motion': '10',
+'--every_nth': '2',
+'--image_batch': '32',
+'--image_dataset': '',
+'--image_discriminator': 'PatchImageDiscriminator',
+'--image_size': '64',
+'--n_channels': '3',
+'--noise_sigma': '0.1',
+'--print_every': '1000',
+'--use_categories': False,
+'--use_infogan': True,
+'--use_noise': True,
+'--video_batch': '32',
+'--video_discriminator': 'CategoricalVideoDiscriminator',
+'--video_length': '16',
+}
+
+
+python train.py  \
+    --image_batch 256 \
+    --video_batch 256 \
+    --use_infogan \
+    --use_noise \
+    --noise_sigma 0.1 \
+    --image_discriminator PatchImageDiscriminator \
+    --video_discriminator CategoricalVideoDiscriminator \
+    --print_every 100 \
+    --every_nth 2 \
+    --batches=10000 \
+    --dim_z_content 50 \
+    --dim_z_motion 10 \
+    --dim_z_category 2 \
+    ../data/shapes ../logs/shapes
+
+
+python train.py  \
+    --image_batch 96 \
+    --video_batch 96 \
+    --use_noise \
+    --noise_sigma 0.1 \
+    --image_discriminator PatchImageDiscriminator \
+    --video_discriminator PatchVideoDiscriminator \
+    --print_every 100 \
+    --every_nth 2 \
+    --dim_z_content 50 \
+    --dim_z_motion 10 \
+    ../data/TaiChi-img ../logs/TaiChi
+
+
+
+ python generate_videos.py --num_videos 10 --output_format gif --number_of_frames 16 ../logs/actions/generator_12000.pytorch output
+
+ python generate_videos.py  ../logs/shapes/generator_01200.pytorch output_shapes
+ python generate_videos.py  ../logs/TaiChi/generator_12300.pytorch output_TaiChi
+
+ cd ../logs/
+tensorboard --logdir=./ --port=8890

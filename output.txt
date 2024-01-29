@@ -1,0 +1,27 @@
+Total number of frames 5290
+Batch 100 [l_gen] 7.901 [l_image_dis] 1.425 [l_video_dis] 1.088. Took 78.56
+Batch 200 [l_gen] 6.270 [l_image_dis] 1.323 [l_video_dis] 0.946. Took 78.94
+Batch 300 [l_gen] 6.525 [l_image_dis] 1.270 [l_video_dis] 0.851. Took 79.21
+Batch 400 [l_gen] 7.202 [l_image_dis] 1.233 [l_video_dis] 0.510. Took 78.47
+Batch 500 [l_gen] 7.995 [l_image_dis] 1.183 [l_video_dis] 0.308. Took 81.70
+Batch 600 [l_gen] 7.853 [l_image_dis] 1.125 [l_video_dis] 0.400. Took 77.34
+Batch 700 [l_gen] 8.931 [l_image_dis] 0.998 [l_video_dis] 0.231. Took 75.32
+Batch 800 [l_gen] 8.522 [l_image_dis] 1.035 [l_video_dis] 0.259. Took 76.23
+Batch 900 [l_gen] 8.835 [l_image_dis] 0.926 [l_video_dis] 0.059. Took 75.68
+Batch 1000 [l_gen] 8.349 [l_image_dis] 0.998 [l_video_dis] 0.313. Took 76.46
+Batch 1100 [l_gen] 9.030 [l_image_dis] 0.906 [l_video_dis] 0.058. Took 77.51
+Batch 1200 [l_gen] 8.524 [l_image_dis] 1.006 [l_video_dis] 0.440. Took 78.51
+Batch 1300 [l_gen] 8.898 [l_image_dis] 0.941 [l_video_dis] 0.047. Took 75.78
+Batch 1400 [l_gen] 8.720 [l_image_dis] 1.010 [l_video_dis] 0.437. Took 76.60
+Batch 1500 [l_gen] 8.651 [l_image_dis] 0.994 [l_video_dis] 0.180. Took 76.16
+Batch 1600 [l_gen] 8.576 [l_image_dis] 0.953 [l_video_dis] 0.183. Took 74.84
+Batch 1700 [l_gen] 8.653 [l_image_dis] 0.933 [l_video_dis] 0.103. Took 76.99
+Batch 1800 [l_gen] 8.891 [l_image_dis] 0.846 [l_video_dis] 0.073. Took 75.92
+Batch 1900 [l_gen] 5.957 [l_image_dis] 1.111 [l_video_dis] 1.454. Took 75.67
+Batch 2000 [l_gen] 7.323 [l_image_dis] 0.891 [l_video_dis] 0.185. Took 76.07
+Batch 2100 [l_gen] 8.413 [l_image_dis] 0.871 [l_video_dis] 0.148. Took 74.12
+Batch 2200 [l_gen] 8.455 [l_image_dis] 0.857 [l_video_dis] 0.123. Took 74.85
+Batch 2300 [l_gen] 8.951 [l_image_dis] 0.825 [l_video_dis] 0.187. Took 76.69
+Batch 2400 [l_gen] 9.087 [l_image_dis] 0.779 [l_video_dis] 0.093. Took 81.64
+Batch 2500 [l_gen] 9.236 [l_image_dis] 0.824 [l_video_dis] 0.185. Took 82.94
+Batch 2600 [l_gen] 9.769 [l_image_dis] 0.802 [l_video_dis] 0.137. Took 81.82

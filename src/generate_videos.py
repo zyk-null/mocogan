@@ -37,19 +37,40 @@ def save_video(ffmpeg, video, filename):
                '-pix_fmt', 'rgb24',
                '-r', '8',
                '-i', '-',
-               '-c:v', 'mjpeg',
+               '-c:v', 'gif',
                '-q:v', '3',
                '-an',
                filename]
 
-    pipe = sp.Popen(command, stdin=sp.PIPE, stderr=sp.PIPE)
-    pipe.stdin.write(video.tostring())
+    # pipe = sp.Popen(command, stdin=sp.PIPE, stderr=sp.PIPE)
+    pipe = sp.Popen(command, stdin=sp.PIPE)
+    # pipe.stdin.write(video.tostring())
+    pipe.communicate(video.tobytes())
+
+# def save_video(ffmpeg, video, filename):
+#     command = [ffmpeg,
+#                '-y',
+#                '-f', 'rawvideo',
+#                '-vcodec', 'rawvideo',
+#                '-s', '64x64',
+#                '-pix_fmt', 'rgb24',
+#                '-r', '8',
+#                '-i', '-',
+#                '-c:v', 'libx264',  # 使用 H.264 编码器
+#                '-preset', 'ultrafast',  # 预设为 ultrafast，可以根据需要调整
+#                '-crf', '25',  # 控制视频质量，可以根据需要调整
+#                filename]
+
+#     pipe = sp.Popen(command, stdin=sp.PIPE)
+#     pipe.communicate(video.tobytes())
+
 
 
 if __name__ == "__main__":
     args = docopt.docopt(__doc__)
 
-    generator = torch.load(args["<model>"], map_location={'cuda:0': 'cpu'})
+    # generator = torch.load(args["<model>"], map_location={'cuda:0': 'cpu'})
+    generator = torch.load(args["<model>"])
     generator.eval()
     num_videos = int(args['--num_videos'])
     output_folder = args['<output_folder>']
@@ -61,3 +82,4 @@ if __name__ == "__main__":
         v, _ = generator.sample_videos(1, int(args['--number_of_frames']))
         video = videos_to_numpy(v).squeeze().transpose((1, 2, 3, 0))
         save_video(args["--ffmpeg"], video, os.path.join(output_folder, "{}.{}".format(i, args['--output_format'])))
+        # save_video(args["--ffmpeg"], video, os.path.join(output_folder, "{}.mp4".format(i)))
